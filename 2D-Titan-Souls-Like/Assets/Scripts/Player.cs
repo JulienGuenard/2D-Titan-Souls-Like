@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
-#region Variables
+    #region Variables
+    public TilemapCollider2D waterCollider;
+    public TilemapCollider2D waterKillerCollider;
     public float speed, sprintSpeed, rollSpeed;
     float x, y;
 
@@ -13,7 +16,6 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
 #endregion
-
 #region Awake & Update
     void Awake()
     {
@@ -29,16 +31,9 @@ public class Player : MonoBehaviour
         Move();
     }
     #endregion
-
 #region Public Methods
     public void SetControl(bool state) { controlLocked = state; }
-    public void RollEnd()
-    {
-        isRolling = false;
-        animator.SetBool("isRolling", false);
-    }
 #endregion
-
 #region Inputs
     void Inputs()
     {
@@ -66,14 +61,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) { Roll(); }
     }
     #endregion
-
 #region Direction
     void Direction()
     {
         if (!isRolling) vel = new Vector2(x, y);
     }
 #endregion
-
 #region Animation
     void Animation()
     {
@@ -101,7 +94,6 @@ public class Player : MonoBehaviour
         else animator.SetBool("isSprinting", false);
     }
     #endregion
-
 #region Move
     void Move()
     {
@@ -115,15 +107,24 @@ public class Player : MonoBehaviour
         // Roll
         if (isRolling) rb.velocity = vel * rollSpeed;
     }
-    #endregion
-
+#endregion
 #region Roll
     void Roll()
     {
         if (!isSprinting) return;
 
+        waterCollider.enabled = false;
+        waterKillerCollider.enabled = false;
         animator.SetBool("isRolling", true);
         isRolling = true;
     }
-#endregion
+
+    public void RollEnd()
+    {
+        isRolling = false;
+        animator.SetBool("isRolling", false);
+        waterCollider.enabled = true;
+        waterKillerCollider.enabled = true;
+    }
+    #endregion
 }

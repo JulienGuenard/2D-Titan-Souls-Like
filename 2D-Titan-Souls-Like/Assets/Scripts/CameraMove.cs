@@ -28,6 +28,7 @@ public class CameraMove : MonoBehaviour
 #region CheckPlayerPos
     private void CheckPlayerPos()
     {
+        if (player == null) return;
         if (x == 0 && y == 0)
         {
             if (transform.position.x < player.transform.position.x - 8) x = 16;
