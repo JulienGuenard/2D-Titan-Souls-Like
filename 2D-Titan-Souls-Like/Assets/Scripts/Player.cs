@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Scripting;
 using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
@@ -12,6 +14,7 @@ public class Player : MonoBehaviour
     Vector2 vel = new Vector2();
 
     bool controlLocked, isSprinting, isRolling;
+    bool canRoll = true;
 
     Rigidbody2D rb;
     Animator animator;
@@ -37,11 +40,11 @@ public class Player : MonoBehaviour
 #region Inputs
     void Inputs()
     {
-        if (controlLocked) return;
+        if (controlLocked || isRolling) return;
 
         InputMove();
         InputSprint();
-        InputRoll();
+        if (canRoll) InputRoll();
     }
 
     void InputMove()
@@ -58,7 +61,7 @@ public class Player : MonoBehaviour
 
     void InputRoll()
     {
-        if (Input.GetKeyDown(KeyCode.E)) { Roll(); }
+        if (Input.GetKey(KeyCode.E)) { Roll(); }
     }
     #endregion
 #region Direction
@@ -113,6 +116,7 @@ public class Player : MonoBehaviour
     {
         if (!isSprinting) return;
 
+        canRoll = false;
         waterCollider.enabled = false;
         waterKillerCollider.enabled = false;
         animator.SetBool("isRolling", true);
@@ -125,6 +129,16 @@ public class Player : MonoBehaviour
         animator.SetBool("isRolling", false);
         waterCollider.enabled = true;
         waterKillerCollider.enabled = true;
+        StartCoroutine(RollDelay());
+    }
+
+    IEnumerator RollDelay()
+    {
+        while(animator.GetCurrentAnimatorStateInfo(0).IsName("Roll") == true)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+        canRoll = true;
     }
     #endregion
 }
