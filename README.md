@@ -9,15 +9,10 @@
   <img src="Github-Screenshots/screenshot6.png" alt="screenshot" width="128" />
 </div>
 
-<div align="center"> 
-<a href="https://archer01.itch.io/titans-souls">(Play game)</a>&nbsp;
-</div>
-
 ---
 
 ## Résumé
 Un exercice d'un top down 2D comme Titan Souls
-
 
 ---
 
