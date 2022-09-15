@@ -8,7 +8,10 @@
   <img src="Github-Screenshots/screenshot5.png" alt="screenshot" width="128" />&nbsp
   <img src="Github-Screenshots/screenshot6.png" alt="screenshot" width="128" />
 </div>
-<a href="https://archer01.itch.io/titans-souls"># (Play game)</a>&nbsp;
+
+<div align="center"> 
+<a href="https://archer01.itch.io/titans-souls">(Play game)</a>&nbsp;
+</div>
 
 ---
 
