@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
-    #region Variables
+#region Variables
     public TilemapCollider2D waterCollider;
     public TilemapCollider2D waterKillerCollider;
     public float speed, sprintSpeed, rollSpeed;
@@ -55,13 +55,13 @@ public class Player : MonoBehaviour
 
     void InputSprint()
     {
-        if (Input.GetKey(KeyCode.LeftShift)) { isSprinting = true; }
+        if (Input.GetAxisRaw("Fire2") > 0) { isSprinting = true; }
         else { isSprinting = false; }
     }
 
     void InputRoll()
     {
-        if (Input.GetKey(KeyCode.E)) { Roll(); }
+        if (Input.GetButtonDown("Fire1") && isSprinting) { Roll(); }
     }
     #endregion
 #region Direction
