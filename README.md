@@ -1,4 +1,4 @@
-# Titan Souls-Like
+# Titan Souls-Like <a href="https://archer01.itch.io/titans-souls">(Play game)</a>&nbsp;
 
 <div align="center"> 
   <img src="Github-Screenshots/screenshot1.png" alt="screenshot" width="128" />&nbsp
