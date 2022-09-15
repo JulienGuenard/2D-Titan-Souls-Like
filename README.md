@@ -1,12 +1,12 @@
 # Titan Souls-Like
 
 <div align="center"> 
-  <img src="assets/GitHub Screenshot/screenshot1.png" alt="screenshot" width="128" />&nbsp
-  <img src="assets/GitHub Screenshot/screenshot2.png" alt="screenshot" width="128" />&nbsp
-  <img src="assets/GitHub Screenshot/screenshot3.png" alt="screenshot" width="128" />&nbsp
-  <img src="assets/GitHub Screenshot/screenshot4.png" alt="screenshot" width="128" />&nbsp
-  <img src="assets/GitHub Screenshot/screenshot5.png" alt="screenshot" width="128" />&nbsp
-  <img src="assets/GitHub Screenshot/screenshot7.png" alt="screenshot" width="128" />
+  <img src="assets/GitHub Screenshots/screenshot1.png" alt="screenshot" width="128" />&nbsp
+  <img src="assets/GitHub Screenshots/screenshot2.png" alt="screenshot" width="128" />&nbsp
+  <img src="assets/GitHub Screenshots/screenshot3.png" alt="screenshot" width="128" />&nbsp
+  <img src="assets/GitHub Screenshots/screenshot4.png" alt="screenshot" width="128" />&nbsp
+  <img src="assets/GitHub Screenshots/screenshot5.png" alt="screenshot" width="128" />&nbsp
+  <img src="assets/GitHub Screenshots/screenshot7.png" alt="screenshot" width="128" />
 </div>
 
 ---
